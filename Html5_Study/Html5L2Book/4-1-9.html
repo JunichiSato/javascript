@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <canvas id="board" width="200" height="200"></canvas>
+    <img id="img">
+</body>
+<script>
+    var canvas = document.getElementById('board');
+    if(canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    }
+
+    // 円の描画
+    ctx.beginPath();
+    ctx.fillStyle = '#FF0000';
+    ctx.arc(30, 80, 20, 0, Math.PI * 2, false);
+    ctx.fill();
+
+    // Canvasの画像への変換
+    var img = canvas.toDataURL();
+
+    // img要素へ変換した画像ファイルの追加
+    document.getElementById('img').src = img;
+</script>
+</html>

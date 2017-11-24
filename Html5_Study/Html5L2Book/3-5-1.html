@@ -1,0 +1,55 @@
+<html>
+<style type="text/css">
+  p.sample { color: blue}
+</style>
+<head>
+<script>
+    window.onload = function (){
+        var a = "foo";
+        var b = "bar";
+
+        var x = 5;
+        var y = 10;
+        var z = 5;
+        var objectA = {name: "Junichi Sato"};
+
+        console.assert(x == z);
+        console.assert(x == y);
+        console.dir(objectA);
+        console.dirxml(document.body);
+
+        console.debug("This is a debug info.");
+        console.error("This is an error info.");
+        console.info("This is a info.");
+        console.warn("This is a warn.");
+        console.log("%s + %s = %s", x, z, y);
+
+        console.group("Group of messages");
+        console.log("log.");
+        console.warn("warn.");
+        console.groupEnd();
+
+        console.groupCollapsed("Group(Collapsed) of messages");
+        console.log("log.");
+        console.warn("warn.");
+        console.groupEnd();
+
+        console.time("sampleTimer");
+
+        console.profile();
+            var p = document.querySelectorAll("p.sample1,p.sample2");
+            for (var i=0; i<p.length; i++) {
+                window.alert(p[i].innerHTML);
+            }
+        console.profileEnd();
+        console.timeEnd("sampleTimer");
+
+    }
+</script>
+</head>
+<body>
+    <p class="sample1">適用対象1</p>
+    <p class="sample2">適用対象2</p>
+    <p class="sample3">適用対象外</p>
+</body>
+</html>

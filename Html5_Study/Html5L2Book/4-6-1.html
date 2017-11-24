@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+// メモをlocalStorageに保存
+function saveNote() {
+    console.log("メモを保存");
+    //（ア)「入力欄」から入力内容を取得
+    var note = document.getElementById("note").value;
+    //（イ)（ア)の内容をローカルストレージへ保存
+    localStorage.setItem("note", note);
+
+    //（ウ)現在の日時を取得
+    var nowDate = new Date();
+    //（エ)（ウ)の内容をlocalStorageの"note_last_save"へ保存
+    localStorage.setItem("note_last_save", nowDate);
+}
+
+// 画面表示時の処理
+window.onload = function() {
+    console.log("画面表示");
+
+    //（ア)localStorageの"note"に保存されている入力内容を取得
+    var note = localStorage.getItem("note");
+    //（イ)（ア)の入力内容を入力欄に表示
+    document.getElementById("note").value = note;
+    //（ウ)localStorageの"note_last_save"に保存されている最終保存日時を取得
+    var lastsave = localStorage.getItem("note_last_save");
+    //（エ)（ウ)を最終保存日時として画面に表示
+    document.getElementById("lasttime").innerHTML = lastsave;
+};
+</script>
+</head>
+<body>
+<h1>WebStorageサンプル</h1>
+テキスト入力欄<br>
+<textarea id="note" rows="5" cols="40"></textarea><br>
+<input type="button" value="保存" onclick="saveNote()">
+<p>最終保存日時:<span id="lasttime" /></p>
+</body>
+</html>

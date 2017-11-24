@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>sample traverse </title>
+<script type="text/javascript">
+
+window.onload = function() {
+    var divs = document.getElementsByTagName('div');
+    var div = divs.item(0);
+    var child = div.firstChild;
+
+    while (child) {
+        if(child.nodeType == 1) {
+            window.alert(child.innerHTML);
+        }
+        child = child.nextSibling;
+    }
+}
+</script>
+</head>
+
+<body>
+<div>
+    <p>1-1</p>
+    <p>1-2</p>
+    <p>1-3</p>
+</div>    
+<div>
+    <p>2-1</p>
+    <p>2-2</p>
+    <p>2-3</p>
+</div>
+
+</body>
+</html>

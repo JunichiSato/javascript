@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XMLHttpRequestデータ送信処理のサンプル</title>
+<script>
+function log(message) {
+    var client = new XMLHttpReequest();
+    client.open("POST", "/log");
+    client.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+    client.send(message);
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

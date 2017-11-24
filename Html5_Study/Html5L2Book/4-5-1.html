@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function handleVisivilityChange() {
+    var cTime = new Date();
+    if(document.hidden) {
+        console.log("pause: " + cTime);
+    } else {
+        console.log("start: " + cTime);
+    }
+    console.log("hidden: " + document.hidden);
+    console.log("visibilityState: " + document.visibilityState);
+}
+document.addEventListener("visibilitychange", handleVisivilityChange, false);
+
+</script>
+</head>
+<body>
+</body>
+</html>

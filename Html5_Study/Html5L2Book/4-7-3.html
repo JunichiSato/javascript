@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XMLHttpRequestデータ受信処理のサンプル</title>
+<script>
+function processData(data) {
+    // 受信したデータの中身の処理（割愛）
+}
+
+function header() {
+    if(this.readyState == this.DONE) {
+        if(this.status == 200 &&
+            this.responseXML != NULL &&
+            this.responseXML.getElementById('test').textContent) {
+                processData(this.responseXML.getElementById('test').textContent);
+                return;
+        }
+        processData(null);
+    }
+}
+</script>
+</head>
+<body>
+</body>
+</html>

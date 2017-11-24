@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('drawArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+
+    // デフォルト
+    ctx.fillText('Text', 0, 30);
+
+    // フォントをサンセリフに、フォントサイズを20pxに
+    ctx.font = '20px sans-serif';
+    ctx.fillText('Text', 0, 60);
+
+    // ボールド
+    ctx.font = 'bold 20px sans-serif';
+    ctx.fillText('Text', 0, 90);
+
+    // イタリック
+    ctx.font = 'italic 20px sans-serif';
+    ctx.fillText('Text', 0, 120);
+
+    // ボールド + イタリック
+    ctx.font = 'bold italic 20px sans-serif';
+    ctx.fillText('Text', 0, 150);
+}
+</script>
+</head>
+<body>
+<canvas id="drawArea" width="640" height="600"></canvas>
+</body>
+</html>

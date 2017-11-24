@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+var worker = new Worker("worker.js");
+worker.onmessage = function(event){
+    var message = event.data;
+    document.getElementById("output").innerHTML = message;
+};
+function clickbtn() {
+    worker.postMessage("test");
+};
+</script>
+</head>
+<body>
+    <input type="button" onclick="clickbtn()" value="クリック">
+    <div id="output"></div>
+</body>
+</html>

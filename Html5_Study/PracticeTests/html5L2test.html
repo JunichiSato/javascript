@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<heml>
+<head>
+<script>
+window.onload = function() {
+    var message = "BEGIN";
+    (function(){
+        (function(){
+            console.log(message);
+        }())
+        var message = "MIDDLE";
+        (function(){
+            console.log("START: " + message);
+            console.log("END: " + message);
+        }())
+        console.log(message);
+    }());
+    console.log(message);
+}
+</script>
+</head>
+<body>
+</body>
+</heml>

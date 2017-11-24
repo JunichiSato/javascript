@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+"use strict";
+function Person(name) {
+    this.name = name;
+}
+
+var newPerson = new Person("Mike");
+console.log(newPerson.sex);
+Person.prototype.sex = "male";
+console.log(newPerson.sex);
+var oldPerson = new Person("Old Man");
+oldPerson.prototype = new Person("Grand Old Man");
+console.log(Person.prototype.isPrototypeOf(oldPerson));
+</script>
+</head>
+<body>
+</body>
+</html>

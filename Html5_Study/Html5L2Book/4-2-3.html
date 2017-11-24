@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>マルチメディアのダウンロード状況の取得</title>
+</head>
+<body>
+<video id="video" width="400" height="300" autoplay>
+    <source src="sample.mp4">
+    <source src="sample.ogv">
+    <source src="sample.webm">
+</video>
+<p id="state"></p>
+<script>
+window.onload = function() {
+    var video = document.getElementById('video');
+    var state = document.getElementById('state');
+    video.addEventListener('loadedmetadata', function(){
+        //要注意！理由は後述
+        console.log('ロード開始しました');
+        state.innerText = 'ロード開始しました';
+    });
+    video.addEventListener('lodeddata', function(){
+        console.log('読み込み完了しました');
+        state.innerText = '読み込み完了しました';
+    });
+    video.addEventListener('canplay', function(){
+        console.log('再生可能です');
+        state.innerText = '再生可能です';
+    });
+    video.addEventListener('playing', function(){
+        console.log('再生中です');
+        state.innerText = '再生中です';
+    });
+    
+}
+</script>
+</body>
+</html>

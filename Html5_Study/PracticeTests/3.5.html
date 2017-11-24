@@ -1,0 +1,44 @@
+<html lang="ja">
+<head></head>
+<body>
+<canvas id="cv1" width="300" height="300"></canvas>
+<canvas id="cv2" width="300" height="300"></canvas>
+<canvas id="cv3" width="300" height="300"></canvas>
+<canvas id="cv4" width="300" height="300"></canvas>
+
+<script type="text/javascript">
+var cv1 = document.getElementById('cv1');
+var ctx1 = cv1.getContext('2d');
+ctx1.strokeRect(20,40,50,100);
+
+var cv2 = document.getElementById('cv2');
+var ctx2 = cv2.getContext('2d');
+ctx2.beginPath();
+ctx2.moveTo(20,40);
+ctx2.lineTo(50,40);
+ctx2.lineTo(50,100);
+ctx2.lineTo(20,100);
+ctx2.closePath();
+ctx2.stroke();
+
+var cv3 = document.getElementById('cv3');
+var ctx3 = cv3.getContext('2d');
+ctx3.beginPath();
+ctx3.moveTo(20,40);
+ctx3.lineTo(70,40);
+ctx3.lineTo(70,140);
+ctx3.lineTo(20,140);
+ctx3.closePath();
+ctx3.stroke();
+
+var cv4 = document.getElementById('cv4');
+var ctx4 = cv4.getContext('2d');
+ctx4.beginPath();
+ctx4.moveTo(20,40);
+ctx4.lineTo(70,40);
+ctx4.lineTo(70,140);
+ctx4.lineTo(20,140);
+ctx4.stroke();
+</script>
+</body>
+</html>

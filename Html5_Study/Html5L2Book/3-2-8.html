@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sample delete attribute</title>
+<script>
+
+function deleteAttr() {
+    var divs = document.getElementsByTagName('div');
+    var div = divs.item(0);
+    var child = div.firstChild;
+
+    while(child) {
+        if(child.nodeType == 1 && child.hasAttribute('style')){
+            child.removeAttributeNode('style');
+        }
+        child.nextSibling;
+    }
+}
+
+</script>
+
+</head>
+<body>
+<div>
+<p>1-1</p>
+<p style="background-color:yellow;width:50px;">1-2</p>
+<p>1-3</p>
+</div>
+
+<button onclick="deleteAttr();">delete attribute</button>
+
+</body>
+</html>

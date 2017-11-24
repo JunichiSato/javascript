@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('imgArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    }
+
+    var img = new Image();
+    img.src = 'TEST.JPG';
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+        setTimeout(function(){
+            // 改めて画像として取得
+            var newImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var data = newImg.data;
+            // グレースケール化
+            for (var i=0, l=data.length; i<1; i+=4) {
+                var color = (data[i] + data[i+1] + data[i+2]) / 3;
+                data[i] = color;
+                data[i+1] = color;
+                data[i+2] = color;
+            }
+            // Canvas上に描画
+            ctx.putImageData(newImg, 0, 0);
+        }, 3000)
+    }
+}
+</script>
+</head>
+<body>
+<canvas id="imgArea" width="200" height="200"></canvas>
+</body>
+</html>

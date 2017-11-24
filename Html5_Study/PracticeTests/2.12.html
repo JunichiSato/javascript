@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head> 
+   <meta charset="UTF-8">  
+   </head>
+<body>
+<div>
+       <p class="currencymark"> 200</p>
+       <p class="currencymark"> 200</p>
+       <p class="currencymark"> 200</p>
+</div>
+<style>
+      p::before{
+          content: "JPY";
+          font-size: 1.0em
+      }
+</style>
+<script>
+     var price = document.querySelector('p.::before');
+     for(var i=0;i<price.length;i++){
+         price[i].innerHTML="USD";
+     }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head> 
+   <meta charset="UTF-8">  
+    <script>
+        window.onload = function() {
+            document.getElementById('A').addEventListener('click',function() {
+                text=document.getElementById('A')
+                text.innerHTML= "Blue is Clicked</p>";
+            },false)
+            document.getElementById('B').addEventListener('click',function() {
+                text=document.getElementById('B')
+                text.innerHTML= "Green is Clicked";
+            },false)
+            document.getElementById('C').addEventListener('click',function() {
+                text=document.getElementById('C')
+                text.innerHTML= "Red is Clicked";            
+            },false)
+            document.getElementById('D').addEventListener('click',function() {
+                text=document.getElementById('D')
+                text.innerHTML= "Yellow is Clicked";
+            },false)
+        }
+    </script>  
+   </head>
+   
+    <body>
+   　<div id ='A'>
+     Blue 
+       　<div id = 'B'>
+           　Green 
+       　</div>
+       　<div id = 'C'>
+           　Red
+       　</div>        
+   　</div>
+   　<div id = 'D'>
+     Yellow
+   　</div>
+   </body>
+</html>

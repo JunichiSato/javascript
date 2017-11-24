@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ドラッグ＆ドロップのサンプル</title>
+<script>
+function dragHandler(event) {
+    var pElement = document.getElementById("disp");
+    event.dataTransfer.setData("text", "COIN");
+    pElement.innerHTML = "dragged !";
+}
+
+function dropHandler(event) {
+    var pElement = document.getElementById("disp");
+    id=event.dataTransfer.getData('text');
+    event.preventDefault();
+}
+</script>
+</head>
+<body>
+<div id="form" draggable="true" ondragstart="dragHandler(event);">
+<p>[COIN]</p>
+</div>
+<p>
+<div id="to" ondragover="event.preventDefault();" ondrop="dropHandler(event);">
+    <p>■BOX■</p>
+</div>
+<p id="disp"> status </p>
+</body>
+</html>

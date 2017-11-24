@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('imgArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    }
+
+    var img = new Image();
+    img.src = 'TEST.JPG';
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+    }
+}
+</script>
+</head>
+<body>
+<canvas id="imgArea" width="200" height="200"></canvas>
+</body>
+</html>

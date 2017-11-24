@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebSocketで送信を行うサンプル</title>
+<script>
+var socket = new WebSocket('ws://game.example.com:12010/updates');
+socket.onopen = function() {
+    setInterval(function(){
+        if (socket.bufferedAmount == 0) {
+            socket.send(getUpdateData());
+        }
+    }, 50);
+}
+</script>
+</head>
+<body>
+</body>
+</html>

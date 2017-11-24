@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+"use strict";
+var adder = "return x + y;";
+var adderObj = new Function("x", "y", adder);
+console.log(adderObj(2, 3));
+</script>
+</head>
+<body>
+</body>
+</html>

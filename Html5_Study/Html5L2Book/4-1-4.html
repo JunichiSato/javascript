@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('drawArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+
+    ctx.font = '20px sans-serif';
+
+    // 左寄せ
+    ctx.textAlign = 'left';
+    ctx.fillText('Text', 60, 30);
+
+    // 中央寄せ
+    ctx.textAlign = 'center';
+    ctx.fillText('Text', 60, 60);
+
+    // 右寄せ
+    ctx.textAlign = 'right';
+    ctx.fillText('Text', 60, 90);
+
+}
+</script>
+</head>
+<body>
+<canvas id="drawArea" width="640" height="600"></canvas>
+</body>
+</html>

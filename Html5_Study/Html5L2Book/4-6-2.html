@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+var request =indexedDB.open("library");
+request.onupgradeneeded = function() {
+    // データベースが存在していなかったので、オブジェクトストアとインデックスを作成します。
+    var db = request.result;
+    var store = db.createObjectStore("books", {keyPath: "isbn"});
+    var titleIndex = store.createIndex("by_title", "title", {unique: true});
+    var authorIndex = store.createIndex("by_author", "author");
+    // Populate with initial data.
+    store.put({title: "Quarry Memories", author: "Fred", isbn: 123456});
+    store.put({title: "Water Buffaloes", author: "Fred", isbn: 123457});
+    store.put({title: "Bedrock Nights", author: "Barney", isbn: 345678});
+};
+request.onsuccess = function() {
+    // データベースのオープンに成功しました。
+    db = request.result;
+};
+</script>
+</head>
+<body>
+<h1>Indexed Databaseサンプル</h1>
+</body>
+</html>

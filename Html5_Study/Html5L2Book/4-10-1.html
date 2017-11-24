@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+<script>
+window.onload = function() {
+    var now = new Date().getTime();
+    var page_load_time = now - performance.timing.navigationStart;
+    alert("User-perceived page loading time: " + page_load_time);
+    var navigation_time = performance.now();
+    alert("Navigation-time: " + navigation_time);
+}
+</script>
+</head>
+<body>
+Main page body goes from here.
+<img src="TEST.JPG">
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('drawArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+
+    // 図形の変形（拡大・縮小）
+    ctx.beginPath();
+    ctx.arc(30, 30, 20, 0, Math.PI*2, false);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.scale(1.7, 1.2);
+    ctx.arc(30, 90, 20, 0, Math.PI*2, false);
+    ctx.stroke();
+}
+</script>
+</head>
+<body>
+<canvas id="drawArea" width="640" height="600"></canvas>
+</body>
+</html>

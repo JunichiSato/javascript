@@ -1,0 +1,48 @@
+<html lang="ja">
+<head></head>
+<body>
+<canvas id="cvs" style="border:1px solid gray"></canvas>
+<img id="img" style="border:1px solid gray">
+<script type="text/javascript">
+var canvas = document.getElementById("cvs");
+var ctx = canvas.getContext("2d");
+var img = document.getElementById("img");
+var saveCanvas = function(){
+img.src = canvas.toDataURL();
+};
+var load = new Image(300,150);
+var loadImg = function(){
+canvas.setAttribute("height", load.height);
+canvas.setAttribute("width", load.width);
+ctx.drawImage(load, 0, 0);
+saveCanvas();
+};
+load.onload = loadImg;
+var dragover = function(e) {
+e.stopPropagation();
+e.preventDefault();
+}
+canvas.addEventListener("dragover", dragover, true);
+var handleFile = function(file){
+var reader = new FileReader();
+reader.onloadend = function(e) {
+load.src = e.target.result;
+};
+reader.readAsDataURL(file);
+};
+var drop = function(e) {
+var dt = e.dataTransfer;
+var files = dt.files;
+e.stopPropagation();
+e.preventDefault();
+if(files.length){
+for (var i = 0; i < files.length; i++) {
+var file = files[i];
+handleFile(file);
+}
+}
+};
+canvas.addEventListener("drop", drop, true);
+</script>
+</body>
+</html>

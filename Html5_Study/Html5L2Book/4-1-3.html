@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById('drawArea');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+    };
+
+    // シャドウの指定
+    ctx.font = '20px sans-serif';
+
+    ctx.shadowColor = '#BBBBBB';
+    ctx.shadowBlur = 1;
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 1;
+
+    ctx.fillText('Text', 0, 30);
+
+}
+</script>
+</head>
+<body>
+<canvas id="drawArea" width="640" height="600"></canvas>
+</body>
+</html>

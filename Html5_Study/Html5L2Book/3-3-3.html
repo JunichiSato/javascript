@@ -1,0 +1,19 @@
+<html>
+<head>
+<script>
+// 受信側ウィンドウを開く
+recieverWindow = window.open("samplePostMessageReceiver.html", "recieverWindow");
+
+// メッセージ送信関数を定義
+function postMessage() {
+    recieverWindow.postMessage("Message from Sender.", "*");
+    console.log("メッセージを送りました。");
+}
+
+</script>
+</head>
+<body>
+<form>
+    <input type="button" value="send message" onclick="postMessage();">
+</body>
+</html>
