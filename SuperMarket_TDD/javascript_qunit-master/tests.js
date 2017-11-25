@@ -1,6 +1,6 @@
 QUnit.module('スーパーの支払金額合計計算', function () {
     QUnit.test('商品番号1を渡すと金額100を返す', function (assert) {
-        var item = items[0];
+        var item = items['1'];
         assert.equal(item, 100);
     });
 });
