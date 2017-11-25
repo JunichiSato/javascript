@@ -3,6 +3,10 @@ QUnit.module('スーパーの支払金額合計計算', function () {
         var item = items['1'];
         assert.equal(item, 100);
     });
+    QUnit.test('商品番号4を渡すと金額350を返す', function (assert) {
+        var item = items['4'];
+        assert.equal(item, 350);
+    });
 });
 
 // QUnit.module('QUnit の使い方', function () {
