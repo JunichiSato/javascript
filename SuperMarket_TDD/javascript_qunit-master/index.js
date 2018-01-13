@@ -16,6 +16,10 @@ function getPrice(itemNumber) {
 }
 
 function cart(items, itemCount) {
+    if (items.length != itemCount.length){
+        throw new Error('商品番号と個数の配列の長さが異なります');
+    }
+    
     var sum = 0;
     for (var i = 0; i < items.length; i++) {
         sum += getPrice(items[i]) * itemCount[i];
