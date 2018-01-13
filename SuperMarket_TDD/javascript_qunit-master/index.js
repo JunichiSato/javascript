@@ -15,7 +15,11 @@ function getPrice(itemNumber) {
     return itemArray[itemNumber];
 }
 
-function cart(itemNo, itemCount) {
-    var sum = getPrice(itemNo) * itemCount;
+function cart(items, itemCount) {
+    var sum = 0;
+    for (var i = 0; i < items.length; i++) {
+        sum += getPrice(items[i]) * itemCount[i];
+    }
+
     return sum;
 }
