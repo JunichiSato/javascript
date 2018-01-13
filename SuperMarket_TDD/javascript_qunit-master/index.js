@@ -11,6 +11,11 @@ function getPrice(itemNumber) {
         9:80,      // お茶
         10:100,    // コーヒー
     }
-    
+
     return itemArray[itemNumber];
+}
+
+function cart(itemNo, itemCount) {
+    var sum = getPrice(1) * itemCount;
+    return sum;
 }
