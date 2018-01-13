@@ -51,6 +51,32 @@ QUnit.module('スーパーの支払金額を計算する', function () {
             });
         });
     });
+    QUnit.module('複数商品の合計金額(税抜き商品含む)', function () {       
+        QUnit.test('商品番号3の外税込み価格162(150)を返す', function (assert) {
+            var items = [3];
+            var itemCount = [1];
+            var actual = cart(items, itemCount);
+        
+            assert.equal(actual, 162);
+        
+        });
+        QUnit.test('タバコ商品(商品番号7)を渡すと金額440(440)を返す', function (assert) {
+            var items = [7];
+            var itemCount = [1];
+            var actual = cart(items, itemCount);
+        
+            assert.equal(actual, 440);
+        
+        });  
+        QUnit.test('タバコ商品(商品番号7)を含む税込み金額548(540)を返す', function (assert) {
+            var items = [1,7];
+            var itemCount = [1,1];
+            var actual = cart(items, itemCount);
+        
+            assert.equal(actual, 548);
+        
+        });
+    });
 });
 
 // QUnit.module('QUnit の使い方', function () {
