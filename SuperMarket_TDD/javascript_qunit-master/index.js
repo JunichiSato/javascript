@@ -16,6 +16,6 @@ function getPrice(itemNumber) {
 }
 
 function cart(itemNo, itemCount) {
-    var sum = getPrice(1) * itemCount;
+    var sum = getPrice(itemNo) * itemCount;
     return sum;
 }
