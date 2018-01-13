@@ -38,5 +38,5 @@ function getTax(total) {
     const TAXRATIO = 0.08;
     var tax = total * TAXRATIO;
 
-    return total + Math.floor(tax);
+    return Math.floor(tax);
 }
