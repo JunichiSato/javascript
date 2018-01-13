@@ -4,6 +4,11 @@ QUnit.module('スーパーの支払金額を計算する', function () {
         // QUnit の assert.equal 系は引数の順番が actual, expected の順(JUnit の逆)なので注意
         assert.equal(actual, 100);
     });
+    QUnit.test('商品番号7を渡すと金額440を返す', function (assert) {
+        var actual = getPrice(7);
+        assert.equal(actual, 440);
+
+    });
 });
 
 // QUnit.module('QUnit の使い方', function () {
