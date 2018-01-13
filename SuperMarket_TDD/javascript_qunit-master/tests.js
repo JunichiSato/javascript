@@ -23,7 +23,14 @@ QUnit.module('スーパーの支払金額を計算する', function () {
             var itemCount = [1];
             var actual = cart(items, itemCount);
             assert.equal(actual, 440);
-        }); 
+        });
+        QUnit.test('与えられた商品番号と個数の配列の長さが異なる場合例外を返す', function (assert) {
+            assert.throws(function () {
+                var items = [1,2,3,4];
+                var itemCount = [1,1];
+                cart(items, itemCount);
+            });
+        });
     });
 });
 
