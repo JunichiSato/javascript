@@ -29,7 +29,14 @@ function cart(items, itemCount) {
     for (var i = 0; i < items.length; i++) {
         taxExcluded += getPrice(items[i]) * itemCount[i];
     }
-    tax = Math.floor(taxExcluded*0.08);
-    
+    tax = getTax(taxExcluded);
+
     return taxExcluded + tax;
+}
+
+function getTax(total) {
+    const TAXRATIO = 0.08;
+    var tax = total * TAXRATIO;
+
+    return total + Math.floor(tax);
 }
