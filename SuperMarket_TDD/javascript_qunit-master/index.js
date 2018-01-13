@@ -26,12 +26,17 @@ function cart(items, itemCount) {
 
     var tax = 0;
     var taxExcluded = 0;
+    var taxIncluded = 0;
     for (var i = 0; i < items.length; i++) {
-        taxExcluded += getPrice(items[i]) * itemCount[i];
+        if (items[i] === 6 || items[i] === 7) {
+            taxIncluded += getPrice(items[i]) * itemCount[i];
+        } else {
+            taxExcluded += getPrice(items[i]) * itemCount[i];
+        }
     }
     tax = getTax(taxExcluded);
 
-    return taxExcluded + tax;
+    return (taxExcluded + tax) + taxIncluded;
 }
 
 function getTax(total) {
