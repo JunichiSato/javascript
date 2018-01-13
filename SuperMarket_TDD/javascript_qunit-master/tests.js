@@ -1,11 +1,8 @@
-QUnit.module('スーパーの支払金額合計計算', function () {
+QUnit.module('スーパーの支払金額を計算する', function () {
     QUnit.test('商品番号1を渡すと金額100を返す', function (assert) {
-        var item = items['1'];
-        assert.equal(item, 100);
-    });
-    QUnit.test('商品番号4を渡すと金額350を返す', function (assert) {
-        var item = items['4'];
-        assert.equal(item, 350);
+        var actual = getPrice(1);
+        // QUnit の assert.equal 系は引数の順番が actual, expected の順(JUnit の逆)なので注意
+        assert.equal(actual, 100);
     });
 });
 
