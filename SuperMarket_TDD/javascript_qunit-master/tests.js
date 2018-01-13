@@ -1,15 +1,21 @@
 QUnit.module('スーパーの支払金額を計算する', function () {
-    QUnit.test('商品番号1を渡すと金額100を返す', function (assert) {
-        var actual = getPrice(1);
-        // QUnit の assert.equal 系は引数の順番が actual, expected の順(JUnit の逆)なので注意
-        assert.equal(actual, 100);
-    });
-    QUnit.test('商品番号7を渡すと金額440を返す', function (assert) {
-        var actual = getPrice(7);
-        assert.equal(actual, 440);
+    QUnit.module('商品番号を渡すと金額を返す', function () {
+        QUnit.test('商品番号1を渡すと金額100を返す', function (assert) {
+            var actual = getPrice(1);
+            // QUnit の assert.equal 系は引数の順番が actual, expected の順(JUnit の逆)なので注意
+            assert.equal(actual, 100);
+        });
+        QUnit.test('商品番号7を渡すと金額440を返す', function (assert) {
+            var actual = getPrice(7);
+            assert.equal(actual, 440);
 
+        });
+        QUnit.test('存在しない商品番号が渡された場合例外を返す', function (assert) {
+            assert.throws(function () {
+                getPrice(11);
+            });
+        });
     });
-
     QUnit.module('複数商品の合計金額を返す', function () { 
         QUnit.test('商品番号1を2個と商品番号5を2個の合計金額1000を返す', function (assert) {
             var items = [1,5];
