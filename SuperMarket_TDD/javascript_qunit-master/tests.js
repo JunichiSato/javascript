@@ -31,11 +31,17 @@ QUnit.module('スーパーの支払金額を計算する', function () {
             assert.equal(actual, 1080);
         
         });
-        QUnit.test('商品番号7を1個で合計金額440を返す', function (assert) {
+        QUnit.test('商品番号7を1個で合計金額475(440)を返す', function (assert) {
             var items = [7];
             var itemCount = [1];
             var actual = cart(items, itemCount);
             assert.equal(actual, 475);
+        });
+        QUnit.test('商品番号1を0個で合計金額0を返す', function (assert) {
+            var items = [1];
+            var itemCount = [0];
+            var actual = cart(items, itemCount);
+            assert.equal(actual, 0);
         });
         QUnit.test('与えられた商品番号と個数の配列の長さが異なる場合例外を返す', function (assert) {
             assert.throws(function () {
