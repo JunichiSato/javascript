@@ -9,19 +9,22 @@ QUnit.module('スーパーの支払金額を計算する', function () {
         assert.equal(actual, 440);
 
     });
-    QUnit.test('商品番号1を2個で合計金額200を返す', function (assert) {
-        var items = 1;
-        var itemCount = 2;
-        var actual = cart(items, itemCount);
-        assert.equal(actual, 200);
-    
+
+    QUnit.module('複数商品の合計金額を返す', function () { 
+        QUnit.test('商品番号1を2個と商品番号5を2個の合計金額1000を返す', function (assert) {
+            var items = [1,5];
+            var itemCount = [2,2];
+            var actual = cart(items, itemCount);
+            assert.equal(actual, 1000);
+        
+        });
+        QUnit.test('商品番号7を3個で合計金額1320を返す', function (assert) {
+            var items = 7;
+            var itemCount = 3;
+            var actual = cart(items, itemCount);
+            assert.equal(actual, 1320);
+        }); 
     });
-    QUnit.test('商品番号7を3個で合計金額1320を返す', function (assert) {
-        var items = 7;
-        var itemCount = 3;
-        var actual = cart(items, itemCount);
-        assert.equal(actual, 1320);
-    }); 
 });
 
 // QUnit.module('QUnit の使い方', function () {
