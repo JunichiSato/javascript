@@ -16,7 +16,7 @@ QUnit.module('スーパーの支払金額を計算する', function () {
             });
         });
     });
-    QUnit.module('複数商品の合計金額(税込み)を返す', function () { 
+    QUnit.module('複数商品の合計金額(税込み商品のみ)を返す', function () { 
         QUnit.test('商品番号1,2,3,4を渡すと金額691(640)を返す', function (assert) {
             var items = [1,2,3,4];
             var itemCount = [1,1,1,1];
@@ -31,11 +31,11 @@ QUnit.module('スーパーの支払金額を計算する', function () {
             assert.equal(actual, 1080);
         
         });
-        QUnit.test('商品番号7を1個で合計金額475(440)を返す', function (assert) {
-            var items = [7];
+        QUnit.test('商品番号10を1個で合計金額108(100)を返す', function (assert) {
+            var items = [10];
             var itemCount = [1];
             var actual = cart(items, itemCount);
-            assert.equal(actual, 475);
+            assert.equal(actual, 108);
         });
         QUnit.test('商品番号1を0個で合計金額0を返す', function (assert) {
             var items = [1];
