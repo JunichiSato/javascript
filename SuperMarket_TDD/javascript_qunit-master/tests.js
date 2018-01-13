@@ -9,9 +9,11 @@ QUnit.module('スーパーの支払金額を計算する', function () {
         assert.equal(actual, 440);
 
     });
-    QUnit.test('商品番号1を1個で合計金額100を返す', function (assert) {
-        var actual = cart(1, 1);
-        assert.equal(actual, 100);
+    QUnit.test('商品番号1を2個で合計金額200を返す', function (assert) {
+        var items = 1;
+        var itemCount = 2;
+        var actual = cart(items, itemCount);
+        assert.equal(actual, 200);
     
     });
     QUnit.test('商品番号7を1個で合計金額440を返す', function (assert) {
