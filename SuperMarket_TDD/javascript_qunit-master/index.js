@@ -12,6 +12,10 @@ function getPrice(itemNumber) {
         10:100,    // コーヒー
     }
 
+    if (!itemArray.hasOwnProperty(itemNumber)) {
+        throw new Error('商品番号が存在しません');
+    }
+    
     return itemArray[itemNumber];
 }
 
@@ -19,7 +23,7 @@ function cart(items, itemCount) {
     if (items.length != itemCount.length){
         throw new Error('商品番号と個数の配列の長さが異なります');
     }
-    
+
     var sum = 0;
     for (var i = 0; i < items.length; i++) {
         sum += getPrice(items[i]) * itemCount[i];
